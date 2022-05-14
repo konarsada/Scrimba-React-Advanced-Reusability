@@ -1,22 +1,23 @@
-import React, {Component} from "react"
+import React from "react"
+import Toggler from "./Toggler"
 
-import {withToggler} from "./HOCs/withToggler"
-
-class Favorite extends Component {
-    render() {
-        return (
-            <div>
-                <h3>Click heart to favorite</h3>
-                <h1>
-                    <span 
-                        onClick={this.props.toggle}
-                    >
-                        {this.props.on ? "❤️" : "♡"}
-                    </span>
-                </h1>
-            </div>
-        ) 
-    }
+function Favorite(props) {
+    return (
+        <Toggler render={
+            (on, toggle) => (
+                <div>
+                    <h3>Click heart to favorite</h3>
+                    <h1>
+                        <span
+                            onClick={toggle}
+                        >
+                            {on ? "❤️" : "♡"}
+                        </span>
+                    </h1>
+                </div>
+            )
+        } />
+    )
 }
 
-export default withToggler(Favorite, {defaultOnValue: false})
+export default Favorite

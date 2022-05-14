@@ -1,15 +1,15 @@
 import React from "react"
-
-/* ***** HOC ***** */
 import Menu from "./components/Menu"
 import Favorite from "./components/Favorite"
 
-export default function App() {
+function App() {
     return (
         <div>
-            <Menu someProp="test-prop" />
+            <Menu />
             <hr />
             <Favorite />
         </div>
     )
 }
+
+export default App
